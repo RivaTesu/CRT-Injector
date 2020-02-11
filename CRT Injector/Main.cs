@@ -41,9 +41,7 @@ namespace CRT_Injector
         {
             new Task(() =>
             {
-                uint PID = (uint)Process.GetProcessesByName("GTA5")[0].Id;
-
-                if (Inject(PID, "C:\\Target.dll"))
+                if (Inject((uint)Process.GetProcessesByName("GTA5")[0].Id, "C:\\Target.dll"))
                     Console.Beep(800, 500);
                 else
                     MessageBox.Show("Error!", "CRT Injector", MessageBoxButtons.OK, MessageBoxIcon.Warning);
